@@ -5,8 +5,9 @@ user_input = input("\nWrite a text to convert:\n\n")
 
 def convert():
     morse_list = []
-    [morse_list.append(morse_alphabet[letters_alphabet.index(letter)]) for letter in user_input]
+    [morse_list.append(morse_alphabet[letters_alphabet.index(letter)]) if letter in letters_alphabet else morse_list.append(letter) for letter in user_input]
 
-    print(morse_list)
+    output = " ".join(morse_list)
+    print(f"\nConverted text: {output}")
 
 convert()
